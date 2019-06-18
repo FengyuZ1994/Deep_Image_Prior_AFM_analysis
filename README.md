@@ -29,9 +29,16 @@ Now, Deep Image Prior is applied to denoise the real AFM image with synthetic sa
 
 ## 2. **Super resolution**
 
-The goal of super-resolution is to take a low-resolution image and upsample it to create a high-resolution version. This is indeed the feature that people need for AFM data analysis. The low-resolution (corrupted) image is used as input. 
+The goal of super-resolution is to take a low-resolution image and upsample it to create a high-resolution version. There are various ways of enhancing image quality. One of the most commonly used technique is interpolation. This is easy to use but this leads to distorted image or reduces the visual quality of image. Most common interpolation methods produce blurry images, i.e. bi-cubic interpolation. In some case, interpolation methods barely enhance the image quality. An example of a low resolution (128 x 128, one of the common dimension in AFM) image is given below. Various interpolation methods have been applied, but none of them give satisfactory results. 
+
+![enter image description here](https://raw.githubusercontent.com/FengyuZ1994/Deep_Image_Prior_AFM_analysis/master/interpolation%20vs%20DIP.png)
+
+Therefore, an effectivesuper resolution is indeed what people are eager to use in AFM data analysis. Fortunately, when low-resolution (corrupted) image is used as input, the CNN prior produces much better high resolution images than common interpolation methods do.  
 
 ![enter image description here](https://raw.githubusercontent.com/FengyuZ1994/test_imgs/master/SR.001.png)
+
+The super resolution method with deep image prior applies to a variety of AFM images. Another two examples are given below. 
+
 ![](https://raw.githubusercontent.com/FengyuZ1994/test_imgs/master/SR.002.png)
 ![enter image description here](https://raw.githubusercontent.com/FengyuZ1994/test_imgs/master/SR1.png)
 
